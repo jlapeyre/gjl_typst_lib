@@ -1,4 +1,4 @@
-#import "math_lib.typ": otimes
+#import "./math.typ": otimes
 
 // Reduced Planck constant
 #let hbar = $planck.reduce$

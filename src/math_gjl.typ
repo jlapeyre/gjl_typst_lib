@@ -149,7 +149,7 @@
 #let expt(x) = {$EE[#x]$} // bboard bold
 
 // Variance
-#let var(x) = {$"Var"[#x]$} // bboard bold
+#let var(y) = {$#math.op("Var") [#y]$} // bboard bold
 
 #let notation_probability = (
     ($expt(x)$, [Expected value of $x$]),

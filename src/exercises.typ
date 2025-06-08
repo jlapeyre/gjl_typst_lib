@@ -20,6 +20,8 @@
 // Put this line where you want the solutions to appear
 // #display-solutions()
 //
+// TODO: Designed largely by users on typst user forum. Give them credit!
+
 
 #let all-problems = state("all-problems", ())
 #let problem-counter = counter("problem")

@@ -1,0 +1,9 @@
+[package]
+name = "gjl_typst_lib"
+version = "1.0.0"
+repository = "https://github.com/jlapeyre/gjl_typst_lib"
+license = "MIT"
+entrypoint = "src/lib.typ"
+authors = ["John Lapeyre <https://github.com/jlapeyre>"]
+description = "Paper template, math, quantum circuits, utils."
+exclude = ["install.sh"]
