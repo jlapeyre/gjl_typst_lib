@@ -25,3 +25,8 @@ $ket(0)$
 
 Hi there.
 ```
+
+## Caution
+
+AFAIK, I am the only person using this library. So I am modifying the library without
+changing the version number.

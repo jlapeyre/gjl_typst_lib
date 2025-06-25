@@ -84,6 +84,7 @@
     $|#(sphi)_1 #(sphi)_2 dots.c #(sphi)_#N|$
 }
 
+// Should be renamed slater_mat, or so.
 // Slater determinant as matrix with vertical bars for delimiter
 #let slater(sphi, x, N) = {
 $
@@ -109,3 +110,26 @@ $
 #let Meas = math.op("M")
 
 #let CNOTop = $ketbra(0) otimes id + ketbra(1) otimes X$
+
+#let CNOTmat = {
+    $
+        mat(
+        1, 0, 0, 0;
+        0, 1, 0, 0;
+        0, 0, 0, 1;
+        0, 0, 1, 0;
+        )
+    $
+}
+
+#let Tmat = {
+    $
+        mat(1, 0; 0, e^(i pi / 4))
+    $
+}
+
+#let Hmat = {
+    $
+        1/sqrt(2) mat(1, 1; 1, -1)
+    $
+}
