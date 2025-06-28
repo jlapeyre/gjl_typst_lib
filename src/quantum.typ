@@ -1,4 +1,4 @@
-#import "./math.typ": otimes
+#import "./math_gjl.typ": otimes
 
 // Reduced Planck constant
 #let hbar = $planck.reduce$
@@ -103,6 +103,7 @@ $
 // RZ rotation
 #let RZ = math.op("RZ")
 #let CNOT = math.op("CNOT")
+#let CZ = math.op("CZ")
 #let X = math.op("X")
 
 // Measurement operator
@@ -110,6 +111,42 @@ $
 #let Meas = math.op("M")
 
 #let CNOTop = $ketbra(0) otimes id + ketbra(1) otimes X$
+
+#let Xmat = {
+    $
+        mat(0, 1; 1, 0)
+    $
+}
+
+#let Ymat = {
+    $
+        mat(0, -i; i, 0)
+    $
+}
+
+#let Zmat = {
+    $
+        mat(1, 0; 0, -1)
+    $
+}
+
+#let Hmat = {
+    $
+        1/sqrt(2) mat(1, 1; 1, -1)
+    $
+}
+
+#let Tmat = {
+    $
+        mat(1, 0; 0, e^(i pi / 4))
+    $
+}
+
+#let Smat = {
+    $
+        mat(1, 0; 0, i)
+    $
+}
 
 #let CNOTmat = {
     $
@@ -122,14 +159,14 @@ $
     $
 }
 
-#let Tmat = {
+#let CZmat = {
     $
-        mat(1, 0; 0, e^(i pi / 4))
+        mat(
+        1, 0, 0, 0;
+        0, 1, 0, 0;
+        0, 0, 1, 0;
+        0, 0, 0, -1;
+        )
     $
 }
 
-#let Hmat = {
-    $
-        1/sqrt(2) mat(1, 1; 1, -1)
-    $
-}

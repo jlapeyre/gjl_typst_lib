@@ -12,6 +12,8 @@
 #let Cc = $CC$
 // The set of rational numbers
 #let Qq = $QQ$
+// The counting numbers
+#let Nnp = $NN_plus$
 #let sgn = math.op("sgn")
 // Override definition of Re for real part
 // It is Fraktur or s.t. by default
@@ -84,6 +86,8 @@
 #let rank = math.op("rank")
 #let span = math.op("span")
 
+#let diag = math.op("diag")
+
 // cal(L)(V) is the set of linear operators on space V
 #let opspc = $cal(L)$
 
@@ -107,6 +111,8 @@
     ([$Mat(T, cal(B))$], [The matrix representation of linear operator $T$ in ordered basis $cal(B)$.])
 )
 
+#let Tr = math.op("Tr")
+
 // Other, for the moment
 
 #let otimes = {$times.circle$}
@@ -116,6 +122,7 @@
 ///
 
 #let implies = $arrow.r.double.long$
+#let impliesiff = $arrow.r.l.double.long$
 
 #let notation_other = (
     ($otimes$, [tensor product, or outer product]),

@@ -119,6 +119,13 @@
     breakable: mybreakable,
 )
 
+#let identity = thmbox("identity", "Identity",
+    inset: insetvals,
+    base_level: 1,
+    fill: rgb("#c8ccf9"),
+    breakable: mybreakable,
+)
+
 #let proof = thmproof("proof", "Proof",
     inset: insetvals,
     fill: rgb("#d7fcd9"),
