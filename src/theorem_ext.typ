@@ -104,8 +104,7 @@
     base_level: 1,
     fill: rgb("#aed2b2"),
     breakable: mybreakable,
-    numbering: none,
-)
+).with(numbering: none)
 
 #let corollary = thmbox("corollary", "Corollary",
     inset: insetvals,
