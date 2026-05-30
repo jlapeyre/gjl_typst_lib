@@ -214,6 +214,11 @@ table(
     ($plus.circle$, [The direct sum of vector spaces. @def-direct-sum]),
 )
 
+//
+#let notation_groups = (
+    ($N lt.tri G$, [$N$ is a normal subgroup of $G$]),
+)
+
 ///
 /// Proofs
 ///
