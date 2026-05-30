@@ -32,7 +32,7 @@
         let h1-num = counter(heading).get().first()
         let problem-number = numbering("1.1", h1-num, ..problem-counter.get())
         let name = [Exercise #problem-number]
-        let problem = (solution: solution, location: here(), name: name)
+        let problem = (solution: solution, statement: statement, location: here(), name: name)
         all-problems.update(problems => problems + (problem,))
         block[_#name:_ #statement]
     }
@@ -41,7 +41,8 @@
 #let display-solutions() = context for p in all-problems.get() {
     if p.solution == none { continue }
     let exercise-link = link(p.location, emph(p.name))
-    block(breakable: false, [_Solution:_ #exercise-link#h(1em)#p.solution])
+    block(breakable: false, [_Statement:_ #exercise-link#h(1em)#p.statement \
+        _Solution:_ #exercise-link#h(1em)#p.solution])
 }
 
 #set heading(numbering: "1.1")
