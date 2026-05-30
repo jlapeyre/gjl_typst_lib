@@ -100,6 +100,31 @@
 #let cyclic(n) = $C_#n$ // cyclic group
 #let dihedral(n) = $D_#n$ // dihedral group
 
+// Cayley table
+// row1 is passed separately because we make gutter separators after.
+// group_order -- number of elements in group. ncols is group_order + 1
+// row1 -- labels for the columns: eg ($e$, $a$, $b$)
+// cells -- remaining cells. First in each row is row label.
+// Example: the group C_2 x C_2
+// #cayley(4, op: $+$,
+//                 ($e$, $a$, $b$, $c$),
+//                 $e$, $e$, $a$, $b$, $c$,
+//                 $a$, $a$, $e$, $c$, $b$,
+//                 $b$, $b$, $c$, $e$, $a$,
+//                 $c$, $c$, $b$, $a$, $e$,
+//             )
+#let cayley(group_order, row1, op: $times$, ..cells) = table(
+    columns: group_order + 1,
+    fill: (x, y) =>
+    if x == 0 or y == 0 { aqua.lighten(60%) }
+    else {gray.lighten(80%) },
+    [#op],
+    ..row1,
+    row-gutter: (1.2pt, auto),
+    column-gutter: (1.2pt, auto),
+    ..cells
+)
+
 // Uh-oh, we have labels mixed in here. Hmmm
 #let notation_linear_algebra = (
     ($id$, [The identity operator]),
@@ -181,4 +206,3 @@
       place(dx: w * 0.0, dy: -h * 1.0, $0$)
   }
 }
-
