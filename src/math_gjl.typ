@@ -170,8 +170,8 @@ table(
     else {gray.lighten(80%) },
     [#op],
     ..col_labels,
-    row-gutter: (1.2pt, auto),
-    column-gutter: (1.2pt, auto),
+    stroke: (0.3pt),
+    gutter: (0.6pt, auto),
     ..for cell in cells.pos() {
         if calc.rem(i, nelem) == 0 {
             (row_labels.at(j),)
