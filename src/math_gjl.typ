@@ -132,6 +132,9 @@
     ..cells
 )
 
+/// Draw a Caley table for a group
+
+
 // Example:
 // #cayley(op: $times$,
 //                 ($e$, $a$, $b$, $c$),
@@ -141,7 +144,7 @@
 //                 $c$, $b$, $a$, $e$,
 //             )
 #let cayley(
-    /// The topmost row, which is actually column labels.
+    /// a list of the second operands. The topmost role
     col_labels,
 
     /// Default is copy col_labels. Setting this is useful if you want to print only a subset of rows,
@@ -151,7 +154,7 @@
     /// Operator to display in upper left cell
     op: $times$,
 
-    /// All remaining entries in the table.
+    /// All remaining entries in the table. Each row will be preceeded by an element of row_labels.
     ..cells
 ) = {
        if row_labels == none {
