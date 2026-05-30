@@ -1,4 +1,4 @@
-#import "@preview/in-dexter:0.7.0": *
+#import "@preview/in-dexter:0.7.2": *
 #import "@preview/t4t:0.4.3": get
 
 // Wrap equation in `nonum` to suppress number the equation
@@ -14,11 +14,11 @@
 }
 
 // Use termin to bold a term and add it to the index.
-// Probably never want to call this directly. We
-// bold to introduce a term, in which case, we add
+// Probably never want to call this directly.
+// We use bold to introduce a term, in which case we add
 // a label as well.
 #let termind(x) = {
-    index[#x] // Add to index printed at end
+    index[#x] // Add to index printed at end. From in-dexter
     strong([#x])
 }
 
@@ -92,4 +92,3 @@
         word(it)
     }
 }
-
