@@ -106,14 +106,14 @@
 // row1 -- labels for the columns: eg ($e$, $a$, $b$)
 // cells -- remaining cells. First in each row is row label.
 // Example: the group C_2 x C_2
-// #cayley(4, op: $+$,
+// #cayley2(4, op: $+$,
 //                 ($e$, $a$, $b$, $c$),
 //                 $e$, $e$, $a$, $b$, $c$,
 //                 $a$, $a$, $e$, $c$, $b$,
 //                 $b$, $b$, $c$, $e$, $a$,
 //                 $c$, $c$, $b$, $a$, $e$,
 //             )
-#let cayley(group_order,
+#let cayley2(group_order,
     /// The topmost row, which is actually column labels.
     col_labels,
     /// Operator to display in upper left cell
@@ -131,6 +131,54 @@
     column-gutter: (1.2pt, auto),
     ..cells
 )
+
+// Example:
+// #cayley(op: $times$,
+//                 ($e$, $a$, $b$, $c$),
+//                 $e$, $a$, $b$, $c$,
+//                 $a$, $e$, $c$, $b$,
+//                 $b$, $c$, $e$, $a$,
+//                 $c$, $b$, $a$, $e$,
+//             )
+#let cayley(
+    /// The topmost row, which is actually column labels.
+    col_labels,
+
+    /// Default is copy col_labels. Setting this is useful if you want to print only a subset of rows,
+    /// or if you want to change the order.
+    row_labels: none,
+
+    /// Operator to display in upper left cell
+    op: $times$,
+
+    /// All remaining entries in the table.
+    ..cells
+) = {
+       if row_labels == none {
+        row_labels = col_labels
+       }
+    let i = 0
+    let j = 0
+    let nelem = col_labels.len()
+table(
+    columns: nelem + 1,
+    fill: (x, y) =>
+    if x == 0 or y == 0 { aqua.lighten(60%) }
+    else {gray.lighten(80%) },
+    [#op],
+    ..col_labels,
+    row-gutter: (1.2pt, auto),
+    column-gutter: (1.2pt, auto),
+    ..for cell in cells.pos() {
+        if calc.rem(i, nelem) == 0 {
+            (row_labels.at(j),)
+            j = j + 1
+        }
+        i = i + 1
+        (cell,)
+    }
+)
+}
 
 // Uh-oh, we have labels mixed in here. Hmmm
 #let notation_linear_algebra = (
