@@ -100,7 +100,7 @@
 #let cyclic(n) = $C_#n$ // cyclic group
 #let dihedral(n) = $D_#n$ // dihedral group
 
-// Cayley table
+/// This function draws Cayley (multiplication) table.
 // row1 is passed separately because we make gutter separators after.
 // group_order -- number of elements in group. ncols is group_order + 1
 // row1 -- labels for the columns: eg ($e$, $a$, $b$)
@@ -113,13 +113,20 @@
 //                 $b$, $b$, $c$, $e$, $a$,
 //                 $c$, $c$, $b$, $a$, $e$,
 //             )
-#let cayley(group_order, row1, op: $times$, ..cells) = table(
+#let cayley(group_order,
+    /// The topmost row, which is actually column labels.
+    col_labels,
+    /// Operator to display in upper left cell
+    op: $times$,
+    /// All remaining entries in the table. Includes row labels (i.e. first operator in prod)
+    ..cells
+) = table(
     columns: group_order + 1,
     fill: (x, y) =>
     if x == 0 or y == 0 { aqua.lighten(60%) }
     else {gray.lighten(80%) },
     [#op],
-    ..row1,
+    ..col_labels,
     row-gutter: (1.2pt, auto),
     column-gutter: (1.2pt, auto),
     ..cells
