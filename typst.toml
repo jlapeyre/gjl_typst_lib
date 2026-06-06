@@ -1,6 +1,6 @@
 [package]
 name = "gjl_typst_lib"
-version = "1.1.1"
+version = "1.1.2"
 repository = "https://github.com/jlapeyre/gjl_typst_lib"
 license = "MIT"
 entrypoint = "src/lib.typ"
