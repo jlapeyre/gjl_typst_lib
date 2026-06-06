@@ -209,8 +209,8 @@ table(
 
 #let notation_other = (
     ($otimes$, [tensor product, or outer product]),
-    ($implies$, ["implies", logical implication]),
-    ($cyclic$, [cyclic group]),
+    ($implies$, [logical implication]),
+    ($cyclic(n)$, [cyclic group of order $n$]),
     ($plus.circle$, [The direct sum of vector spaces. @def-direct-sum]),
 )
 
