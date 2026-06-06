@@ -15,7 +15,7 @@ Then install to the typst-precsribed location for locally installed libraries.
 ## Example
 
 ```typst
-#import "@local/gjl_typst_lib:1.0.0"
+#import "@local/gjl_typst_lib:1.1.1"
 
 #gjl_typst_lib.math_gjl.Cc
 
@@ -28,5 +28,5 @@ Hi there.
 
 ## Caution
 
-AFAIK, I am the only person using this library. So I am modifying the library without
+AFAIK, I am the only person using this library. So I sometimes modify the library without
 changing the version number.
