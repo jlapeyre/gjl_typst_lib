@@ -100,8 +100,11 @@ $
 #let vacstate = $ket("vac" #h(0em))$
 //#let vacstate = $ket(emptyset)$
 
-// RZ rotation
+// Rotation matrices
+#let RX = math.op("RX")
+#let RY = math.op("RY")
 #let RZ = math.op("RZ")
+
 #let CNOT = math.op("CNOT")
 #let CZ = math.op("CZ")
 #let X = math.op("X")
